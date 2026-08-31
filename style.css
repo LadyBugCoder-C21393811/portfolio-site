@@ -1,61 +1,27 @@
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    margin: 0;
-    padding: 40px; 
-    max-width: 900px; 
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
+/* Modern navigation bar */
 nav {
     background-color: #d633ff;
-    padding: 15px;
-    margin-bottom: 30px; 
-    border-radius: 8px; 
+    padding: 15px 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; /* centers the links */
+    gap: 30px; /* spacing between links */
 }
 
+/* Navigation links */
 nav a {
     color: #121212;
-    margin-right: 20px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px; 
-}
-
-/* Headings */
-h1, h2 {
-    color: #d633ff;
-    margin-top: 30px;
-    margin-bottom: 15px; 
-}
-
-
-p {
-    line-height: 1.8; 
-    margin-bottom: 20px;
-}
-
-li {
-    margin-bottom: 10px; 
-}
-
-/* Narrator button */
-button.narrator-btn {
-    background-color: #d633ff;
-    color: #121212;
-    border: none;
-    padding: 12px 18px;
     font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 25px; 
+    padding: 8px 12px;
     border-radius: 6px;
+    transition: background-color 0.2s ease;
 }
 
-button.narrator-btn:hover {
-    background-color: #b82de6;
+/* Hover effect */
+nav a:hover {
+    background-color: #ffffff;
+    color: #121212;
 }
