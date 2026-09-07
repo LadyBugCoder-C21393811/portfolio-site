@@ -44,16 +44,20 @@ nav {
     gap: 20px;
     border-bottom: 1px solid #333333;
     font-size: 1.1rem;
+    margin-bottom: 30px;
 }
 
 nav a {
     color: #f5f5f5;
     text-decoration: none;
     font-weight: bold;
+    position: relative;
+    transition: all 0.25s ease;
 }
 
 nav a:hover {
     color: #d633ff;
+    transform: translateY(-2px);
 }
 
 /* ------------------------------
@@ -62,29 +66,36 @@ nav a:hover {
 
 .home-hero {
     max-width: 100%;
-    padding: 60px 20px;
+    padding: 120px 20px;
     text-align: center;
-    background: linear-gradient(135deg, #2a0033, #1a001f);
+    margin-bottom: 40px;
+
+    /* Dark tech-wave background */
+    background-image: url('https://images.unsplash.com/photo-1527443224154-9f5a5a4a4a4a?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 0;
+    box-shadow: none;
 }
 
-.home-hero h1 {
-    font-size: 3rem;
-    color: #ff66ff;
-    margin-bottom: 10px;
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.home-hero h2 {
-    font-size: 2rem;
-    color: #d633ff;
-    margin-bottom: 20px;
-}
-
+.home-hero h1,
+.home-hero h2,
 .home-hero p {
-    max-width: 900px;
-    margin: 0 auto 20px auto;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
 }
+
+.home-hero h1 { animation-delay: 0.2s; font-size: 3rem; color: #ff66ff; }
+.home-hero h2 { animation-delay: 0.5s; font-size: 2rem; color: #d633ff; }
+.home-hero p  { animation-delay: 0.8s; max-width: 900px; margin: 0 auto 20px; font-size: 1.2rem; line-height: 1.6; }
 
 /* ------------------------------
    STANDARD SECTIONS (BOXES)
@@ -92,53 +103,48 @@ nav a:hover {
 
 section {
     max-width: 900px;
-    margin: 30px auto;
-    padding: 25px;
+    margin: 50px auto;
+    padding: 35px;
     background-color: #1a1a1a;
-    border-radius: 10px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
 }
 
 h1, h2, h3 {
     color: #ff66ff;
     margin-top: 0;
+    margin-bottom: 20px;
 }
 
 p {
-    line-height: 1.6;
+    margin-bottom: 18px;
+    line-height: 1.7;
 }
 
 /* ------------------------------
    LISTS
 ------------------------------ */
 
-ul {
-    padding-left: 20px;
-}
-
-li {
-    margin-bottom: 8px;
-}
+ul { padding-left: 20px; }
+li { margin-bottom: 12px; }
 
 /* ------------------------------
-   CV BUTTON
+   CV BUTTON + GLOW
 ------------------------------ */
 
-.cv-button {
-    background-color: #d633ff;
-    color: #121212;
-    padding: 12px 18px;
-    font-weight: bold;
-    border-radius: 6px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+.cv-button,
+button,
+a.cv-button,
+.glow-btn {
+    transition: all 0.25s ease;
 }
 
-.cv-button:hover {
-    background-color: #ffffff;
-    color: #121212;
+.cv-button:hover,
+button:hover,
+a.cv-button:hover,
+.glow-btn:hover {
+    box-shadow: 0 0 12px #ff66ff, 0 0 24px #d633ff;
+    transform: translateY(-2px);
 }
 
 /* ------------------------------
@@ -155,19 +161,20 @@ section a:hover {
 }
 
 /* ------------------------------
-   PROJECT CARDS (READY FOR USE)
+   PROJECT CARDS
 ------------------------------ */
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .project-card {
     background-color: #1f1f1f;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     transition: transform 0.2s ease;
@@ -193,8 +200,8 @@ section a:hover {
 
 footer {
     text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
+    padding: 25px 0;
+    margin-top: 60px;
     background-color: #1f1f1f;
     color: #aaaaaa;
     font-size: 0.9rem;
